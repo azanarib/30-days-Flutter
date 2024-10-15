@@ -1,3 +1,4 @@
+import 'package:catalog_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,16 +10,22 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool isChange = true; // For Password
-  bool changeButton = false; // Button Anumation
+  bool changeButton = false; // Button Animation
 
   final formKey = GlobalKey<FormState>();
-  myFunction(BuildContext context) {
+  myFunction(BuildContext context) async {
     if (formKey.currentState!.validate()) {
       changeButton = true;
       setState(() {});
 
       setState(() {});
+      await Future.delayed(const Duration(seconds: 1));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
     }
+    await Future.delayed(const Duration(seconds: 2));
+    changeButton = false;
+    setState(() {});
   }
 
   @override
@@ -39,13 +46,13 @@ class _LoginPageState extends State<LoginPage> {
                     }
                   },
                   decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(
+                    contentPadding: const EdgeInsets.all(
                       20,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.email,
                     ),
                     hintText: "Enter username or email",
@@ -72,11 +79,11 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   obscureText: isChange,
                   decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(20),
+                    contentPadding: const EdgeInsets.all(20),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
-                    prefixIcon: Icon(Icons.lock),
+                    prefixIcon: const Icon(Icons.lock),
                     hintText: "Enter password",
                     labelText: "Password",
                     suffixIcon: GestureDetector(
@@ -84,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                         isChange = !isChange;
                         setState(() {});
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.remove_red_eye_rounded,
                       ),
                     ),
@@ -99,15 +106,15 @@ class _LoginPageState extends State<LoginPage> {
                   child: AnimatedContainer(
                     width: changeButton ? 50 : 250,
                     height: 50,
-                    duration: Duration(
+                    duration: const Duration(
                       seconds: 1,
                     ),
                     child: changeButton
-                        ? Icon(
+                        ? const Icon(
                             Icons.done,
                             color: Colors.white,
                           )
-                        : Center(
+                        : const Center(
                             child: Text(
                               "login",
                               style: TextStyle(
