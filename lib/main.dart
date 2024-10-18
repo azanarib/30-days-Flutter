@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:catalog_app/pages/drawers.dart';
 import 'package:catalog_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -10,48 +12,54 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Material(
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            backgroundColor: Colors.indigo,
-            title: const Text(
-              "Login Page",
-              style: TextStyle(
-                color: Colors.white,
-              ),
+        child: Column(
+          children: [
+            MyScreen(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyScreen extends StatefulWidget {
+  const MyScreen({super.key});
+
+  @override
+  State<MyScreen> createState() => _MyScreenState();
+}
+
+class _MyScreenState extends State<MyScreen> {
+  @override
+  void initState() {
+    Timer(
+      Duration(seconds: 4),
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyLoginPage(),
+          ),
+        );
+      },
+    );
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: Colors.indigo,
+        child: Center(
+          child: Text(
+            "Catalog app",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 80,
             ),
           ),
-          body: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                children: [
-                  Image.asset(
-                    "assets/images/login_page.png",
-                    fit: BoxFit.cover,
-                    width: 400,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: 0.0,
-                      bottom: 5.0,
-                    ),
-                    child: Text(
-                      "Welcome",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const LoginPage(),
-                ],
-              ),
-            ),
-          ),
-          drawer: MyDrawer(),
         ),
       ),
     );

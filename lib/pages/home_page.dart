@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       home: Column(
         children: [
-          Center(
+          const Center(
             child: Text(
               "Home Page",
               style: TextStyle(
@@ -22,9 +22,9 @@ class HomePage extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
+                  MaterialPageRoute(builder: (context) => const LoginPage()));
             },
-            child: Center(
+            child: const Center(
               child: Text("Back to Login page"),
             ),
           )

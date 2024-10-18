@@ -1,5 +1,54 @@
+import 'package:catalog_app/pages/drawers.dart';
 import 'package:catalog_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
+
+class MyLoginPage extends StatelessWidget {
+  const MyLoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.indigo,
+        title: const Text(
+          "Login Page",
+          style: TextStyle(),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Image.asset(
+                "assets/images/login_page.png",
+                fit: BoxFit.cover,
+                width: 400,
+              ),
+              const Padding(
+                padding: EdgeInsets.only(
+                  top: 0.0,
+                  bottom: 5.0,
+                ),
+                child: Text(
+                  "Welcome",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const LoginPage(),
+            ],
+          ),
+        ),
+      ),
+      drawer: const MyDrawer(),
+    );
+  }
+}
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,14 +60,14 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool isChange = true; // For Password
   bool changeButton = false; // Button Anumation
-
+// This code is for Form validation.
   final _formKey = GlobalKey<FormState>();
   myFunction(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
       changeButton = true;
       setState(() {});
       await Future.delayed(
-        Duration(seconds: 2),
+        const Duration(seconds: 2),
       );
       Navigator.push(
         context,
@@ -27,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
       setState(() {});
-      Future.delayed(Duration(seconds: 2));
+      Future.delayed(const Duration(seconds: 2));
       changeButton = false;
     }
   }
@@ -49,13 +98,13 @@ class _LoginPageState extends State<LoginPage> {
                 }
               },
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(
+                contentPadding: const EdgeInsets.all(
                   20,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.email,
                 ),
                 hintText: "Enter username or email",
@@ -82,11 +131,11 @@ class _LoginPageState extends State<LoginPage> {
               },
               obscureText: isChange,
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(20),
+                contentPadding: const EdgeInsets.all(20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
-                prefixIcon: Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock),
                 hintText: "Enter password",
                 labelText: "Password",
                 suffixIcon: GestureDetector(
@@ -94,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                     isChange = !isChange;
                     setState(() {});
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.remove_red_eye_rounded,
                   ),
                 ),
@@ -109,15 +158,15 @@ class _LoginPageState extends State<LoginPage> {
               child: AnimatedContainer(
                 width: changeButton ? 50 : 250,
                 height: 50,
-                duration: Duration(
+                duration: const Duration(
                   seconds: 1,
                 ),
                 child: changeButton
-                    ? Icon(
+                    ? const Icon(
                         Icons.done,
                         color: Colors.white,
                       )
-                    : Center(
+                    : const Center(
                         child: Text(
                           "login",
                           style: TextStyle(
@@ -129,7 +178,38 @@ class _LoginPageState extends State<LoginPage> {
                       ),
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 8.0,
+              bottom: 8.0,
+              top: 18.0,
+            ),
+            child: Row(
+              children: [
+                const Text(
+                  "Don't have an account?",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(
+                    Colors.indigo,
+                  )),
+                  onPressed: () {},
+                  child: const Center(
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
