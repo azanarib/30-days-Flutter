@@ -1,5 +1,6 @@
-import 'package:catalog_app/pages/drawers.dart';
+import 'package:catalog_app/widgets/drawers.dart';
 import 'package:catalog_app/pages/home_page.dart';
+import 'package:catalog_app/widgets/app_bar_theme.dart';
 import 'package:flutter/material.dart';
 
 class MyLoginPage extends StatelessWidget {
@@ -7,48 +8,52 @@ class MyLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.indigo,
-        title: const Text(
-          "Login Page",
-          style: TextStyle(),
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              Image.asset(
-                "assets/images/login_page.png",
-                fit: BoxFit.cover,
-                width: 400,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  top: 0.0,
-                  bottom: 5.0,
-                ),
-                child: Text(
-                  "Welcome",
-                  style: TextStyle(
-                    fontSize: 50,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const LoginPage(),
-            ],
+    // String name = "";
+    return MaterialApp(
+      themeMode: ThemeMode.light,
+      theme: MyTheme.lightThemeData(context),
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text(
+            "Login Page",
           ),
         ),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                Image.asset(
+                  "assets/images/login_page.png",
+                  fit: BoxFit.cover,
+                  width: 400,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    top: 0.0,
+                    bottom: 5.0,
+                  ),
+                  child: Text(
+                    "Welcome",
+                    style: TextStyle(
+                      fontSize: 50,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const LoginPage(),
+              ],
+            ),
+          ),
+        ),
+        drawer: const MyDrawer(),
       ),
-      drawer: const MyDrawer(),
     );
   }
 }
+
+// String name = "";
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -69,10 +74,10 @@ class _LoginPageState extends State<LoginPage> {
       await Future.delayed(
         const Duration(seconds: 2),
       );
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => const MyHomePage(),
         ),
       );
       setState(() {});
@@ -92,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Username cannot be empty";
+                  return "Username cannot be empty.";
                 } else {
                   return null;
                 }
@@ -151,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Material(
-            color: Colors.indigo,
+            color: Colors.deepPurple,
             borderRadius: BorderRadius.circular(changeButton ? 150 : 8.0),
             child: InkWell(
               onTap: () => myFunction(context),
@@ -197,7 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   style: const ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(
-                    Colors.indigo,
+                    Colors.deepPurple,
                   )),
                   onPressed: () {},
                   child: const Center(
