@@ -1,0 +1,63 @@
+{
+    "products" : [
+        {
+            "id": "CodePur001",
+            "name": "iPhone 6 Pro Max",
+            "descr": "12th generation",
+            "price": 999,
+            "color": "#335053",
+            "image":
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1yY8FzgO2FFlgwANM3CP6N-zZxUJp_OyTTw&s0"
+        },
+        {
+            "id": "2",
+            "name": "iPhone 5 Pro Max",
+            "descr": "12th generation",
+            "price": 689,
+            "color": "#335053",
+            "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fbaiyintec.en.made-in-china.com%2Fproduct%2FPtyYCGjoHnhR%2FChina-Original-I-5-PRO-Max-16GB-1tb-7800mAh-Face-ID-Unlocked-Dual-SIM-Card-Android-13-CDMA-Camera-Smart-Phone.html&psig=AOvVaw0n9N_79LxgahrjlS4-BtMu&ust=1730911870540000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJjH66zTxYkDFQAAAAAdAAAAABAE"
+        },
+        {
+            "id": "3",
+            "name": "iPhone 15 Pro Max",
+            "descr": "12th generation",
+            "price": 600,
+            "color": "#335053",
+            "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gsmarena.com%2Fapple_iphone_15_pro_max-pictures-12548.php&psig=AOvVaw0QZO2ohrMxIyPgi2jcbOVo&ust=1730911989435000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDpmOTTxYkDFQAAAAAdAAAAABAE"
+        }, 
+        {
+            "id": "4",
+            "name": "iPhone 12 Pro Max",
+            "descr": "12th generation",
+            "price": 250,
+            "color": "#335053",
+            "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.apple.com%2Fng%2Fnewsroom%2F2020%2F11%2Fiphone-12-pro-max-iphone-12-mini-and-homepod-mini-available-to-order-friday%2F&psig=AOvVaw2iXjbBRHWrzlDBT4cMLWnZ&ust=1730912119673000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOjvy6PUxYkDFQAAAAAdAAAAABAE"
+
+        },{
+            "id": "5",
+            "name": "iPhone 11 Pro Max",
+            "descr": "12th generation",
+            "price": 150,
+            "color": "#335053",
+            "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dxomark.com%2Fapple-iphone-11-pro-max-camera-review%2F&psig=AOvVaw1WryZ2EA9FdL5ptuUa6y7G&ust=1730912171919000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKCwoLvUxYkDFQAAAAAdAAAAABAE"
+        },
+        {
+            "id": "6",
+            "name": "Samsung A15 Galaxy",
+            "descr": "latest generation",
+            "price": 120,
+            "color": "#335053",
+            "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsung.com%2Fpk%2Fsmartphones%2Fgalaxy-a%2Fgalaxy-a15-blue-128gb-sm-a155flbgpkd%2Fbuy%2F&psig=AOvVaw3OQYNGeNy3Ssp6Qn7Dxw6r&ust=1730912412019000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOD5563VxYkDFQAAAAAdAAAAABAE"
+
+        },
+        {
+            "id": "7",
+            "name": "iPhone 16 Pro Max",
+            "descr": "12th generation",
+            "price": 689,
+            "color": "#335053",
+            "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.gsmarena.com%2Fapple_iphone_16_pro_max-pictures-13123.php&psig=AOvVaw3Is43ZKbANaonNHm6LcxvI&ust=1730912239235000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMisrNvUxYkDFQAAAAAdAAAAABAE"
+
+        }
+    ]
+}

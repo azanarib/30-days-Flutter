@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
   static ThemeData lightThemeData(BuildContext context) => ThemeData(
-        fontFamily: GoogleFonts.gideonRoman().fontFamily,
+        fontFamily: GoogleFonts.amethysta().fontFamily,
+        textTheme: TextTheme(displayLarge: TextStyle(color: Colors.white)),
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.deepPurple,
           elevation: 0.0,
